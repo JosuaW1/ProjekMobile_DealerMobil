@@ -1,4 +1,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Location Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- Camera Permissions (for image picker) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    
+    <!-- Storage Permissions (for image picker) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <!-- Internet Permission (for API calls) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    
+    <!-- Network State Permission -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <!-- Phone Permission (for dialer) -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
+    <!-- Vibration Permission (for notifications) -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:label="dealer_mobil"
         android:name="${applicationName}"
@@ -31,6 +55,7 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
@@ -40,6 +65,28 @@
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
+        </intent>
+        
+        <!-- For camera apps -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        
+        <!-- For gallery apps -->
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT" />
+        </intent>
+        
+        <!-- For maps apps -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+        
+        <!-- For phone dialer -->
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
         </intent>
     </queries>
 </manifest>

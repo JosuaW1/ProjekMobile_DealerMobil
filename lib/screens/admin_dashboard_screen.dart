@@ -154,7 +154,7 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
                 childAspectRatio:
-                    1.5, // Increased from 1.3 to 1.5 to give more height
+                    1.6, // Increased from 1.5 to 1.6 for more height
                 children: [
                   _buildStatCard(
                     title: 'Total Users',
@@ -303,34 +303,37 @@ class _AdminDashboardScreenState extends State<AdminDashboardScreen> {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: EdgeInsets.all(12.0), // Reduced from 16.0 to 12.0
+          padding: EdgeInsets.all(10.0), // Reduced from 12.0 to 10.0
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 icon,
-                size: 28, // Reduced from 30 to 28
+                size: 26, // Reduced from 28 to 26
                 color: color,
               ),
-              SizedBox(height: 6), // Reduced from 8 to 6
+              SizedBox(height: 4), // Reduced from 6 to 4
               Text(
                 value,
                 style: TextStyle(
-                  fontSize: 22, // Reduced from 24 to 22
+                  fontSize: 20, // Reduced from 22 to 20
                   fontWeight: FontWeight.bold,
                   color: color,
                 ),
               ),
-              SizedBox(height: 2), // Reduced from 4 to 2
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 11, // Reduced from 12 to 11
-                  color: Colors.grey[600],
+              SizedBox(height: 2), // Keep at 2
+              Flexible(
+                // Added Flexible to prevent overflow
+                child: Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 10, // Reduced from 11 to 10
+                    color: Colors.grey[600],
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                maxLines: 2, // Added maxLines to prevent overflow
-                overflow: TextOverflow.ellipsis, // Added overflow handling
               ),
             ],
           ),

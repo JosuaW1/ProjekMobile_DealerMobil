@@ -18,6 +18,7 @@ import 'screens/admin_dashboard_screen.dart';
 import 'screens/admin_users_screen.dart';
 import 'screens/admin_mobil_screen.dart';
 import 'screens/admin_orders_screen.dart';
+import 'screens/sensor_demo_screen.dart';
 import 'services/database_helper.dart';
 import 'services/notification_service.dart';
 
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Dealer Mobil',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -78,6 +80,7 @@ class MyApp extends StatelessWidget {
           '/admin_users': (context) => AdminUsersScreen(),
           '/admin_mobil': (context) => AdminMobilScreen(),
           '/admin_orders': (context) => AdminOrdersScreen(),
+          '/sensor_demo': (context) => SensorDemoScreen(),
         },
         onUnknownRoute: (settings) {
           return MaterialPageRoute(

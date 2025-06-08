@@ -14,6 +14,7 @@ class NavigationHelper {
   static const String adminUsers = '/admin_users';
   static const String adminMobil = '/admin_mobil';
   static const String adminOrders = '/admin_orders';
+  static const String sensorDemo = '/sensor_demo';
 
   // Navigation Methods
   static void goToLogin(BuildContext context) {
@@ -50,6 +51,10 @@ class NavigationHelper {
 
   static void goToAdminOrders(BuildContext context) {
     Navigator.pushNamed(context, adminOrders);
+  }
+
+  static void goToSensorDemo(BuildContext context) {
+    Navigator.pushNamed(context, sensorDemo);
   }
 
   // Helper method to go back with result

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
+import '../utils/navigation_helper.dart';
 
 class HelpScreen extends StatelessWidget {
   @override
@@ -93,6 +94,51 @@ class HelpScreen extends StatelessWidget {
                       Icons.location_on,
                       'Alamat',
                       'Jl. Sudirman No. 123, Jakarta',
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 16),
+
+            // Demo Features Section
+            Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Demo Fitur',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[800],
+                      ),
+                    ),
+                    SizedBox(height: 16),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton.icon(
+                        onPressed: () {
+                          NavigationHelper.goToSensorDemo(context);
+                        },
+                        icon: Icon(Icons.sensors),
+                        label: Text('Demo Sensor Gyroscope'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.purple[700],
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 12),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
